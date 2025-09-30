@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "incidents",
+  "info": {
+    "singularName": "incident",
+    "pluralName": "incidents",
+    "displayName": "Incident"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Number": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    },
+    "Short_Description": {
+      "type": "string",
+      "required": true
+    },
+    "Assigned_To": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::agent.agent"
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}
